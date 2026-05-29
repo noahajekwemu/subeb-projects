@@ -1,6 +1,6 @@
 {
     "metrics": {
-        "total_inventory": 1328,
+        "total_inventory": 2238,
         "critical_shortages": 0,
         "data_accuracy": "0.41%"
     },
@@ -27,9 +27,9 @@
             "UBEC_Receipts": 0,
             "SUBEB Receipts": 0,
             "NGO Receipts": 80,
-            "Procured Receipts": 0,
+            "Procured Receipts": 400,
             "Total Disbursed": 65,
-            "Current Stock": 135,
+            "Current Stock": 535,
             "Reorder Point": 50,
             "Allocation Status": "Sufficient Stock"
         },
@@ -54,10 +54,10 @@
             "Starting_Stock": 25,
             "UBEC_Receipts": 0,
             "SUBEB Receipts": 0,
-            "NGO Receipts": 0,
+            "NGO Receipts": 510,
             "Procured Receipts": 300,
             "Total Disbursed": 35,
-            "Current Stock": 290,
+            "Current Stock": 800,
             "Reorder Point": 15,
             "Allocation Status": "Sufficient Stock"
         }
