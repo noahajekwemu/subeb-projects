@@ -1,0 +1,65 @@
+{
+    "metrics": {
+        "total_inventory": 1328,
+        "critical_shortages": 0,
+        "data_accuracy": "0.41%"
+    },
+    "items": [
+        {
+            "SKU": "SCH-TXT-101",
+            "Item Name": "Primary Mathematics Textbook G1",
+            "Category": "Pri-Textbooks",
+            "Starting_Stock": 150,
+            "UBEC_Receipts": 200,
+            "SUBEB Receipts": 150,
+            "NGO Receipts": 0,
+            "Procured Receipts": 0,
+            "Total Disbursed": 200,
+            "Current Stock": 300,
+            "Reorder Point": 60,
+            "Allocation Status": "Sufficient Stock"
+        },
+        {
+            "SKU": "SCH-TXT-102",
+            "Item Name": "Basic Science Manual Grade 4",
+            "Category": "Ube-Textbooks",
+            "Starting_Stock": 120,
+            "UBEC_Receipts": 0,
+            "SUBEB Receipts": 0,
+            "NGO Receipts": 80,
+            "Procured Receipts": 0,
+            "Total Disbursed": 65,
+            "Current Stock": 135,
+            "Reorder Point": 50,
+            "Allocation Status": "Sufficient Stock"
+        },
+        {
+            "SKU": "SCH-DESK-201",
+            "Item Name": "Dual-Seater Wooden Classroom Desk",
+            "Category": "Furniture",
+            "Starting_Stock": 80,
+            "UBEC_Receipts": 45,
+            "SUBEB Receipts": 58,
+            "NGO Receipts": 470,
+            "Procured Receipts": 0,
+            "Total Disbursed": 50,
+            "Current Stock": 603,
+            "Reorder Point": 30,
+            "Allocation Status": "Sufficient Stock"
+        },
+        {
+            "SKU": "SCH-TAB-301",
+            "Item Name": "7-Inch Student Learning Tablet",
+            "Category": "Electronics",
+            "Starting_Stock": 25,
+            "UBEC_Receipts": 0,
+            "SUBEB Receipts": 0,
+            "NGO Receipts": 0,
+            "Procured Receipts": 300,
+            "Total Disbursed": 35,
+            "Current Stock": 290,
+            "Reorder Point": 15,
+            "Allocation Status": "Sufficient Stock"
+        }
+    ]
+}
