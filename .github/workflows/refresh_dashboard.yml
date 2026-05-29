@@ -1,4 +1,4 @@
-name: Automated Board Dashboard Pipeline
+name: Refresh Dashboard Data
 
 on:
   schedule:
