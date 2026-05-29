@@ -1,41 +1,36 @@
-name: Refresh Dashboard Data
+name: Automated Board Dashboard Pipeline
 
 on:
   schedule:
-    - cron: '0 * * * *' 
-  push:
-    branches:
-      - main
+    - cron: '23 * * * *' # Shifting out of peak hours to avoid queuing traffic delays
   workflow_dispatch: 
 
+# Force environment engine parameters to clear deprecation blocks
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
 jobs:
-  build:
+  build-and-parse:
     runs-on: ubuntu-latest
-    # This environment variable addresses the warning in your error log
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+    - name: Access Repository Source
+      uses: actions/checkout@v4.1.7 # Explicit pin to version supporting Node24 patches
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
+    - name: Initialize Environment Runtime
+      uses: actions/setup-python@v5.1.1 # Explicit pin to version supporting Node24 patches
+      with:
+        python-version: '3.11'
 
-      - name: Install Dependencies
-        run: |
-          pip install pandas numpy fsspec
+    - name: Inject Parsing Dependencies
+      run: pip install pandas openpyxl numpy
 
-      - name: Run Data Aggregator
-        # Check this specific step in your GitHub Actions log if it still fails
-        run: python parse_sheets.py
+    - name: Execute Extraction Matrix
+      run: python parse_sheets.py
 
-      - name: Commit and Push Changes
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add web/inventory.json
-          git commit -m "Automated update: Latest educational operational metrics" || echo "No changes to commit"
-          git push
+    - name: Standardize and Save Generated Artifacts
+      run: |
+        git config --global user.name 'Board Automation Engine'
+        git config --global user.email 'automation@schoolboard.gov'
+        git add web/inventory.json
+        git commit -m "System-automated synchronization update" || exit 0
+        git push
