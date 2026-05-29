@@ -2,7 +2,6 @@ name: Refresh Dashboard Data
 
 on:
   schedule:
-    # Triggers on an hourly cron timeline as required in Phase 3
     - cron: '0 * * * *' 
   push:
     branches:
@@ -12,28 +11,27 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # This environment variable addresses the warning in your error log
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
-      # 1. Check out your code (Updated from v3 to v4)
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 2. Set up the Python environment (Updated from v4 to v5)
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      # 3. Install necessary libraries
       - name: Install Dependencies
         run: |
           pip install pandas numpy fsspec
 
-      # 4. Execute the Data Aggregator script
       - name: Run Data Aggregator
+        # Check this specific step in your GitHub Actions log if it still fails
         run: python parse_sheets.py
 
-      # 5. Commit the generated inventory.json back to the web/ folder
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
