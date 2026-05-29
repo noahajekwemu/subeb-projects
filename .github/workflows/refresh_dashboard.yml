@@ -31,6 +31,6 @@ jobs:
       run: |
         git config --global user.name 'Board Automation Engine'
         git config --global user.email 'automation@schoolboard.gov'
-        git add web/inventory.json
+        git add docs/inventory.json
         git commit -m "System-automated synchronization update" || exit 0
         git push
