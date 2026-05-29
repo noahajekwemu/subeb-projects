@@ -57,11 +57,11 @@ def main():
         "items": master_df.to_dict(orient='records')
     }
 
-    # 4. Generate the light file (inventory.json) in the web directory
-    output_directory = "web"
+    # 4. Generate the light file (inventory.json) in the docs directory
+    output_directory = "docs"
     output_file = os.path.join(output_directory, "inventory.json")
     
-    # Ensure the web directory exists
+    # Ensure the docs directory exists
     os.makedirs(output_directory, exist_ok=True)
     
     with open(output_file, 'w') as f:
