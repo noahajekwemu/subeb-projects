@@ -7,7 +7,6 @@ on:
   push:
     branches:
       - main
-  # Allows you to manually trigger the update from the GitHub Actions tab
   workflow_dispatch: 
 
 jobs:
@@ -15,17 +14,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Check out your code from the repository
+      # 1. Check out your code (Updated from v3 to v4)
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # 2. Set up the Python environment
+      # 2. Set up the Python environment (Updated from v4 to v5)
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      # 3. Install necessary libraries for parse_sheets.py
+      # 3. Install necessary libraries
       - name: Install Dependencies
         run: |
           pip install pandas numpy fsspec
