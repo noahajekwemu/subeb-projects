@@ -1,6 +1,6 @@
 {
     "metrics": {
-        "total_inventory": 3838,
+        "total_inventory": 7959,
         "critical_shortages": 0,
         "data_accuracy": "0.41%"
     },
@@ -13,9 +13,9 @@
             "UBEC_Receipts": 200,
             "SUBEB Receipts": 150,
             "NGO Receipts": 1600,
-            "Procured Receipts": 0,
+            "Procured Receipts": 4121,
             "Total Disbursed": 200,
-            "Current Stock": 1900,
+            "Current Stock": 6021,
             "Reorder Point": 60,
             "Allocation Status": "Sufficient Stock"
         },
